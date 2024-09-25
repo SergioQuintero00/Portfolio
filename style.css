@@ -21,8 +21,26 @@ section{
 
 h1{
   font-size: 2.5rem;
-  font-family: "Sofadi One", system-ui;
+  font-family: "Sofadi One", cursive;
   font-weight: bolder;
+}
+
+.seccion-oscura{
+  color: white;
+  background-color: #0b0b0b;
+}
+
+.seccion-clara{
+  color: black;
+  background-color: white;
+}
+
+.seccion-titulo{
+  font-size: 2rem;
+  background-color: #0a0a23;
+  border-radius: 50%;
+  padding: 15px;
+  font-family: "Sofadi One", cursive;
 }
 
 /* Sección Hero */
@@ -41,11 +59,72 @@ h1{
   color: #464646
 }
 
+.presentacion-inferior{
+  background-color: #cbcbc3;
+}
+
 .presentacion-imagen{ 
   width: 200px;
   height: 200px;
   border-radius: 50%;  /* en bootstrap este atributo sería con la clase rounded-circle*/
   margin: 50px;
+}
+
+/* Sobre mi */
+
+.sobre-mi{
+  height: 500px;
+  padding: 10px;
+}
+
+.sobre-mi .contenedor{   /*solo se aplica a .contenedor dentro de un objeto con .sobre-mi*/
+  max-width: 600px;
+  text-align: center;
+}
+
+/* Sección experiencia */
+
+.experiencia{
+  padding: 40px 40px 60px 40px;
+}
+
+.experiencia .columna{
+  padding: 20px;
+  border: 2px solid #8080804d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  transition: all 0.2s ease-in;
+}
+
+.experiencia .columna:hover{
+  color: white;
+  background-color: #1b1b32;
+}
+
+.experiencia-titulo{
+  font-size: 25px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.experiencia i{
+  font-size: 2.5rem;
+  color: #7ade30;
+  background-color:  #0a0a23;
+  padding: 8px 19px;
+  border-radius: 50%;
+}
+
+.badges-contenedor {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 10px 0px;
+}
+
+.badges{
+  margin: 25px;
 }
 
 /* Responsive */
