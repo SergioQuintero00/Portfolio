@@ -41,11 +41,22 @@ h1{
   border-radius: 50%;
   padding: 15px;
   font-family: "Sofadi One", cursive;
+  text-align: center;
 }
 
 .seccion-descripcion{
   font-size: 1.2rem;
   color: #584e4e;
+  text-align: center;
+}
+
+.seccion-texto{
+  font-size: 1.2rem;
+}
+
+.btn-info {
+  font-size: 1.1rem;
+  margin: 20px;
 }
 
 .texto-negro{
@@ -152,6 +163,7 @@ h1{
   border-radius: 10px;
   display: block;
   transition: all 0.2s ease;
+  
 }
 
 .proyectos-contenedor {
@@ -197,6 +209,116 @@ h1{
   margin: 10px;
 }
 
+/* Contacto */
+
+.contacto .container {
+  max-width: 1100px;
+  min-height: 200px;
+  padding: 20px;
+}
+
+.rectangulo{
+  margin-top: -3rem;
+  background-color: rgb(13,110,253);
+  border-radius: 10px;
+  box-shadow: 0px 1px 4px 1px white;
+}
+
+.contacto .row{
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.contacto .descripcion {
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.contacto button {
+  color: white;
+  font-weight: bold;
+  background-color: transparent;
+  border: 2px solid white;
+  padding: 1.25em 2 em;
+  margin: 10px;
+  border-radius: 100px;
+  transition: all 0.2s ease-in-out;
+}
+
+.contacto button:hover {
+  background-color: white;
+  color:black;
+}
+
+.contacto button i{
+  color: white;
+  font-size: 1.3rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.contacto button:hover i{
+  color:black;
+}
+
+/* Pie de página */
+
+footer{
+  min-height: 500px;
+}
+
+.footer-logo {
+  height: 80px;
+  width: 80px;
+  margin:10px;
+}
+
+.footer-texto{
+  font-size: 1.5rem;
+  padding: 20px;
+  margin-bottom: 30px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.footer-texto-center {
+  text-align: center;
+}
+
+.iconos-redes-sociales a {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  margin: 10px;
+  border: 2px solid white;
+  border-radius: 30%;
+  transition: all 0.2s ease-in;
+}
+
+.iconos-redes-sociales i {
+  color: white;
+  font-size: 1.5rem;
+  transition: all 0.2s ease-in;
+}
+
+.iconos-redes-sociales a:hover{
+  background-color: white;
+  border: 2px solid rgb(13,110,253);
+}
+
+.iconos-redes-sociales a:hover i{
+  color: black;
+}
+
+.derechos-de-autor {
+  font-size: 15px;
+  color:#aeaeae;
+  padding: 20px;
+}
+
 /* Responsive */
 
 @media screen and (max-width: 767px){
@@ -213,6 +335,16 @@ h1{
 @media screen and (min-width: 700px){
   .presentacion-inferior-imagen {
     max-width: 600px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .overlay p {
+    font-size: 18px;
+  }
+
+  .overlay i{
+    font-size: 40px;
   }
 }
 
