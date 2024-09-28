@@ -262,6 +262,30 @@ h1{
   color:black;
 }
 
+/* Contacto */
+
+.formulario{
+  background-color: #f5f6f7;
+  min-height: 450px;
+  text-align: center;
+  padding: 20px;
+}
+
+.separador-negro{
+  background-color: #0b0b0b;
+  height: 15px;
+  width: 100%;
+}
+
+.campo-requerido{
+  color: red;
+  font-size: 10px;
+}
+
+.needs-validation {
+  
+}
+
 /* Pie de página */
 
 footer{
