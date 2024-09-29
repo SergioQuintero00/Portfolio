@@ -57,27 +57,38 @@
     <div class="formulario container-fluid">
       <form class="needs-validation" novalidate>
         <div class="separador-negro"></div>
-        <div>
-          <p class="seccion-texto mt-3 mb-3">!Escriba aquí su mensaje para poder empezar con su proyecto!</p>
-          <label for="nombre" class="form-label">Nombre y apellidos</label>
-          <input type="text" id="nombre" class="form-control mb-3" placeholder="Nombre" pattern="([a-z]|[A-Z])" required>
-          <div class="valid-feedback mb-3">Perfecto!!</div>
-          <div class="invalid-feedback mb-3">Rellene este campo</div>
+        <div class="seccion-titulo">
+          <h1>Contacto</h1>
         </div>
-        <div>
-          <label for="mail" class="form-label">Dirección de correo electrónico</label>
-          <input type="email" id="mail" class="form-control mb-3" placeholder="Email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
-          <div class="valid-feedback mb-3">Perfecto!!</div>
-          <div class="invalid-feedback mb-3">Formato de correo incorrecto</div>
+        <div class="seccion-descripcion">
+          <p class="seccion-texto mb-5">¡Escriba aquí su mensaje y comencemos su proyecto!</p>
         </div>
-        <div>
-          <label for="mensaje" class="form-label">Cuerpo del mensaje</label>
-          <textarea id="mensaje" cols="30" rows="10" class="form-control mb-3" placeholder="Escriba aquí su mensaje..." required></textarea>
-          <div class="valid-feedback mb-3">Perfecto!!</div>
-          <div class="invalid-feedback mb-3">Rellene este campo</div>
-        </div>
-        <div>
-          <button class="btn btn-dark mb-5" type="submit">Enviar</button>
+        <div class="row">
+          <div class="row col-12 col-md-6">
+            <label for="nombre" class="form-label col-12 col-md-3 col-lg-5">Nombre y apellidos:</label>
+            <div class="col-12 col-md-9 col-lg-7 mb-3">
+              <input type="text" id="nombre" class="form-control" placeholder="Sergio Quintero" pattern="([a-z]|[A-Z])" required>
+              <div class="valid-feedback mb-3">Perfecto!!</div>
+              <div class="invalid-feedback mb-3">Rellene este campo</div>
+            </div>
+          </div>
+          <div class="row col-12 col-md-6">
+            <label for="mail" class="form-label col-12 col-md-3 col-lg-5">Correo:</label>
+            <div class="col-12 col-md-9 col-lg-7 mb-3">
+              <input type="email" id="mail" class="form-control" placeholder="email@mail.com" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
+              <div class="valid-feedback mb-3">Perfecto!!</div>
+              <div class="invalid-feedback mb-3">No es una dirección de correo válida</div>
+            </div>
+          </div>
+          <div>
+            <label for="mensaje" class="form-label">Cuerpo del mensaje:</label>
+            <textarea id="mensaje" cols="30" rows="10" class="form-control mb-3" placeholder="Escriba aquí su mensaje..." required></textarea>
+            <div class="valid-feedback mb-3">Perfecto!!</div>
+            <div class="invalid-feedback mb-3">Rellene este campo</div>
+          </div>
+          <div>
+            <button class="btn btn-dark mb-5" type="submit">Enviar</button>
+          </div>
         </div>
         <div class="container-fluid mb-3"></div>
       </form>
@@ -111,7 +122,7 @@
     <a href="https://github.com/SergioQuintero00" target="_blank" rel="noopener noreferrer">
       <i class="bi bi-github"></i>
     </a>
-    <a href="mailto:sqmena@gmail.com" target="_blank" rel="noopener noreferrer">
+    <a href="contacto.html" target="_blank" rel="noopener noreferrer">
       <i class="bi bi-envelope"></i>
     </a>
   </div>
