@@ -1,7 +1,6 @@
 /*Barra de navegación*/
 
 .navbar{
-  padding: 2rem;
   background-color: #f5f6f7;
 }
 
@@ -92,6 +91,10 @@ h1{
   height: 200px;
   border-radius: 50%;  /* en bootstrap este atributo sería con la clase rounded-circle*/
   margin: 50px;
+}
+
+.presentacion-inferior-imagen {
+  min-width: 100%;
 }
 
 /* Sobre mi */
@@ -282,6 +285,10 @@ h1{
 .campo-requerido{
   color: red;
   font-size: 10px;
+}
+
+.form-control{
+  border: #aeadad 2px solid;
 }
 
 .needs-validation {
