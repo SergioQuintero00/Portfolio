@@ -8,7 +8,7 @@
 		<meta name="keywords" content="Java, Eclipse, Kotlin">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Titulo -->
-    <title>Contacto | Sergio Quintero Mena</title>
+    <title>Test AJAX | Sergio Quintero Mena</title>
     <!-- Favicon -->
 		<link rel="icon" type="image/x-icon" href="imagenes/Favicon_Redondo_Sergio.png">
     <!-- Bootstrap -->
@@ -53,14 +53,24 @@
     </div>
   </nav>
 
+  <div id="TestAjax" class="tablaTest container-fluid flex-column justify-content-center align-items-center d-flex">
+    <h3 id = "title" class="text-center mb-3"></h3>
+    <form id="pregunta" class="justify-content-center align-items-center">
+
+    </form>
+    <div id="botones">
+      <button id="startTest" class="btn btn-dark" onclick="setTest(document.getElementById('startTest'))">¡Empezar!</button>
+    </div>
+  </div>
+
   <!-- Contacto -->
-  <section id="contacto" class="contacto seccion-oscura">
+  <!-- <section id="contacto" class="contacto seccion-oscura">
     <div class="container row text-center rectangulo">
       <div class="col seccion-titulo">
         <h1>¡Hablemos!</h1>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- Pie de página -->
   <footer class="seccion-oscura d-flex flex-column align-items-center justify-content-center">

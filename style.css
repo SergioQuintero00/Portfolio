@@ -295,9 +295,35 @@ h1{
   
 }
 
+/*Test Página*/
+
+.tablaTest{
+  min-height: 500px;
+}
+
+.form-check-label {
+  font-size: 18px;
+  padding-right: 15px;
+}
+
+.form-check{
+  background-color: #242424;
+  border-radius: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 30px;
+  margin-bottom: 20px;
+  color: rgb(255, 255, 255);
+}
+
+.botones {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
 /* Pie de página */
 
-footer{
+.footer{
   min-height: 500px;
 }
 
