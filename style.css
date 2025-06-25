@@ -1,7 +1,7 @@
 /*Barra de navegación*/
 
 .navbar{
-  background-color: #f5f6f7;
+  background-color: rgba(139, 139, 139, 0.95);
 }
 
 .navbar-collapse{
@@ -18,10 +18,13 @@ section{
   justify-content: center;
 }
 
-h1{
-  font-size: 2.5rem;
+h1, h2, h3, h4, h5, h6{
   font-family: "Sofadi One", cursive;
   font-weight: bolder;
+}
+
+p{
+  font-family: 'Quicksand', sans-serif;
 }
 
 .seccion-oscura{
@@ -53,6 +56,15 @@ h1{
   font-size: 1.2rem;
 }
 
+.section-title{
+  padding: 0px 5px 5px 5px;
+  text-align: left;
+  font-weight: bold;
+  font-style: italic;
+  font-family: "Quicksand";
+  border-bottom: 1px solid rgb(68, 68, 68);
+}
+
 .btn-info {
   font-size: 1.1rem;
   margin: 20px;
@@ -69,21 +81,6 @@ h1{
 /* Sección Hero */
 .presentacion{
   background-color: #f5f6f7;
-  min-height: 450px;
-  text-align: center;
-}
-
-.presentacion-principal{
-  padding: 3rem;
-}
-
-.presentacion-principal h2 {
-  font-size: 1.5rem;
-  color: #464646
-}
-
-.presentacion-inferior{
-  background-color: #cbcbc3;
 }
 
 .presentacion-imagen{ 
@@ -91,28 +88,13 @@ h1{
   height: 200px;
   border-radius: 50%;  /* en bootstrap este atributo sería con la clase rounded-circle*/
   margin: 50px;
-}
-
-.presentacion-inferior-imagen {
-  min-width: 100%;
-}
-
-/* Sobre mi */
-
-.sobre-mi{
-  height: 500px;
-  padding: 10px;
-}
-
-.sobre-mi .contenedor{   /*solo se aplica a .contenedor dentro de un objeto con .sobre-mi*/
-  max-width: 600px;
-  text-align: center;
+  display: block;
 }
 
 /* Sección experiencia */
-
 .experiencia{
-  padding: 40px 40px 60px 40px;
+  padding: 0px 40px 60px 40px;
+  background-color: #f5f6f7;
 }
 
 .experiencia .columna{
@@ -130,33 +112,22 @@ h1{
   background-color: #1b1b32;
 }
 
-.experiencia-titulo{
-  font-size: 25px;
-  font-weight: bold;
-  margin: 10px 0;
+.experiencia .columna:hover .tipo-contrato{
+  color: white;
 }
 
-.experiencia i{
-  font-size: 2.5rem;
-  color: #7ade30;
-  background-color:  #0a0a23;
-  padding: 8px 19px;
-  border-radius: 50%;
+.tipo-contrato{
+  color: black;
+  align-self: end;
+  transition: all 0.2s ease-in;
 }
 
-.badges-contenedor {
-  font-size: 25px;
-  font-weight: bold;
-  margin: 10px 0px;
-}
 
-.badges{
-  margin: 25px;
-}
 
 /* Proyectos */
 .proyectos-recientes{
-  padding: 40px;
+  padding: 2.5rem 2.5rem 0 2.5rem;
+  background-color: #f5f6f7;
 }
 
 .proyectos-recientes img {
@@ -170,7 +141,6 @@ h1{
 }
 
 .proyectos-contenedor {
-  padding-top: 60px;
   margin-bottom: 40px;
 }
 
@@ -185,7 +155,6 @@ h1{
 }
 
 .overlay p {
-  font-size: 25px;
   font-weight: bold;
   margin-bottom: 0;
 }
@@ -195,7 +164,7 @@ h1{
 }
 
 .proyecto:hover img {
-  opacity: 0.2;
+  opacity: 0.15;
 }
 
 .proyecto:hover .overlay {
@@ -204,6 +173,7 @@ h1{
 
 .overlay .iconos-contenedor {
   display: flex;
+  justify-content: center;
 }
 
 .overlay i {
@@ -212,119 +182,10 @@ h1{
   margin: 10px;
 }
 
-/* Contacto */
-
-.contacto .container {
-  max-width: 1100px;
-  min-height: 200px;
-  padding: 20px;
-}
-
-.rectangulo{
-  margin-top: -3rem;
-  background-color: rgb(13,110,253);
-  border-radius: 10px;
-  box-shadow: 0px 1px 4px 1px white;
-}
-
-.contacto .row{
-  width: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.contacto .descripcion {
-  color: white;
-  font-size: 1.2rem;
-  text-align: center;
-}
-
-.contacto button {
-  color: white;
-  font-weight: bold;
-  background-color: transparent;
-  border: 2px solid white;
-  padding: 1.25em 2 em;
-  margin: 10px;
-  border-radius: 100px;
-  transition: all 0.2s ease-in-out;
-}
-
-.contacto button:hover {
-  background-color: white;
-  color:black;
-}
-
-.contacto button i{
-  color: white;
-  font-size: 1.3rem;
-  transition: all 0.2s ease-in-out;
-}
-
-.contacto button:hover i{
-  color:black;
-}
-
-/* Contacto página*/
-
-.formulario{
-  background-color: #f5f6f7;
-  min-height: 450px;
-  text-align: center;
-  padding: 20px;
-}
-
-.separador-negro{
-  background-color: #0b0b0b;
-  height: 15px;
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0px 1px 4px 1px white;
-}
-
-.campo-requerido{
-  color: red;
-  font-size: 10px;
-}
-
-.form-control{
-  border: #aeadad 2px solid;
-}
-
-.needs-validation {
-  
-}
-
-/*Test Página*/
-
-.tablaTest{
-  min-height: 500px;
-}
-
-.form-check-label {
-  font-size: 18px;
-  padding-right: 15px;
-}
-
-.form-check{
-  background-color: #242424;
-  border-radius: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 30px;
-  margin-bottom: 20px;
-  color: rgb(255, 255, 255);
-}
-
-.botones {
-  margin-right: 5px;
-  margin-left: 5px;
-}
-
 /* Pie de página */
 
-.footer{
-  min-height: 500px;
+footer{
+  padding: 0px;
 }
 
 .footer-logo {
@@ -334,14 +195,12 @@ h1{
 }
 
 .footer-texto{
-  font-size: 1.5rem;
-  padding: 20px;
-  margin-bottom: 30px;
   font-family: 'Quicksand', sans-serif;
+  text-align: center;
 }
 
-.footer-texto-center {
-  text-align: center;
+.iconos-redes-sociales{
+  justify-content: end;
 }
 
 .iconos-redes-sociales a {
@@ -375,7 +234,6 @@ h1{
 .derechos-de-autor {
   font-size: 15px;
   color:#aeaeae;
-  padding: 20px;
 }
 
 /* Responsive */
@@ -391,12 +249,6 @@ h1{
   }
 }
 
-@media screen and (min-width: 700px){
-  .presentacion-inferior-imagen {
-    max-width: 600px;
-  }
-}
-
 @media screen and (max-width: 400px) {
   .overlay p {
     font-size: 18px;
@@ -407,3 +259,12 @@ h1{
   }
 }
 
+@media screen and (max-width: 992px) {
+  .iconos-redes-sociales{
+    justify-content: center;
+  }
+
+  .derechos-de-autor{
+    text-align: center;
+  }
+}
