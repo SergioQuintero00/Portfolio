@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<!-- Metadatos -->
+		<meta charset="UTF-8">
+		<meta name="author" content="Sergio Quintero Mena">
+		<meta name="Portafolio de desarrollo de software de Sergio Quintero Mena">
+		<meta name="keywords" content="Java, Eclipse, Kotlin">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Título -->
+		<title>Sergio Quintero Mena | Desarrollo de Software</title>
+		<!-- Favicon -->
+		<link rel="icon" type="image/x-icon" href="imagenes/Logo portfolio circulo.png">
+		 <!-- Bootstrap -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+		<!-- Iconos de Bootstrap -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+		<!-- CSS -->
+		<link href="style.css" rel="stylesheet">
+		<!-- Fuentes de Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<!-- Sofadi One --><link href="https://fonts.googleapis.com/css2?family=Sofadi+One&display=swap" rel="stylesheet">
+		<!-- Quicksand --><link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<!-- Barra de Navegacion -->
+		<nav class="navbar navbar-expand-md navbar-light sticky-top">
+			<div class="container-fluid">
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler" aria-controls="#navbar-toggler" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbar-toggler">
+					<a class="navbar-brand" id="logo" href="#">
+						<img src="imagenes/Logo portfolio circulo.png" width="50" alt="Logo de la página web">
+					</a>
+					<ul class="navbar-nav d-flex justify-content-center align-items-center">
+						<li class="nav-item">
+							<a class="nav-link" href="#proyectos">Proyectos</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#experiencia">Experiencia</a>
+						</li>
+						<!-- <li class="nav-item"></li>
+							<a class="nav-link" href="contacto.html">Contacto</a>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Sección Hero -->
+		<section class="presentacion align-items-strech">
+			<div class="d-flex flex-column justify-content-center align-items-center">
+				<img class="presentacion-imagen" src="imagenes/Imagen_principal.jpeg" alt="Imagen Perfil" id="imagen-principal">
+				<h4 class="fw-medium">Desarrollador Fullstack</h4>
+				<h1 class="text-center">Sergio Quintero Mena</h1>
+				<div class="container text-center w-75">
+					<p>Graduado en Desarrollo de Aplicaciones Multiplataforma con experiencia en desarrollo de aplicaciones web con React y Node.js</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Proyectos -->
+		<section id="proyectos" class="proyectos-recientes seccion-clara d-flex flex-column">
+			<div class="container text-center proyectos-contenedor">
+				<h3 class="section-title">Proyectos</h3>
+				<div class="row row-gap-2">
+
+					<!-- Comandas -->
+					<div class="col-12 col-lg-6">
+						<div class="proyecto height-100">
+							<img src="/imagenes/Proyecto_comanda.png"  alt="imagen concurso">
+							<div class="overlay">
+								<h2>Gevensoft Hosteleria</h2>
+								<div class="iconos-contenedor align-items-center">
+									<a href="https://youtu.be/McU3I_yYk_A" target="_blank" rel="noopener noreferrer">
+										<i class="bi bi-youtube"></i>
+									</a>
+									<a class="btn btn-link" data-bs-toggle="collapse" href="#proyectoComanda" role="button" aria-expanded="false" aria-controls="collapseExample">
+										<i class="bi bi-card-text"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="collapse" id="proyectoComanda">
+							<div class="card card-body">
+								<p>Aplicación web de comandas que funciona como extensión al software ERP de Onushop. Se usó React.js para el frontend, Node.js para el Websocket y la API y PostgreSQL como Base de datos</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Wassawe -->
+					<!-- <div class="col-12 col-lg-6">
+						<div class="proyecto height-100">
+							<img src="/imagenes/WassaWe.png"  alt="imagen concurso">
+							<div class="overlay">
+								<h2>WassaWe</h2>
+								<div class="iconos-contenedor align-items-center">
+									 <a href="https://github.com/SergioQuintero00/WassaWe" target="_blank" rel="noopener noreferrer">
+										<i class="bi bi-github"></i>
+									</a>
+									<a href="https://wassawe.onrender.com/" target="_blank" rel="noopener noreferrer">
+										<i class="bi bi-laptop"></i>
+									</a>
+									<a class="btn btn-link" data-bs-toggle="collapse" href="#proyecto2Descripcion" role="button" aria-expanded="false" aria-controls="collapseExample">
+										<i class="bi bi-card-text"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="collapse" id="proyecto2Descripcion">
+							<div class="card card-body">
+								<p>WassaWe es una aplicación web de mensajería la cual está realizada con Bootstrap, PHP y Mongodb. La página web está hosteada en <a href="https://render.com/" target="_blank" rel="noopener noreferrer">render.com</a>, la base de datos con <a href="https://www.mongodb.com/es/atlas" target="_blank" rel="noopener noreferrer">MongoDB Atlas</a> y hago uso de la API de <a href="https://es.imgbb.com" target="_blank" rel="noopener noreferrer">ImgBB</a> para almacenar las Imágenes de Perfil.</p>
+							</div>
+						</div>
+					</div> -->
+
+					<!-- Concurso Programame -->
+					<div class="col-12 col-lg-6">
+						<div class="proyecto">
+							<img src="imagenes/Concurso Programame.jpeg"  alt="imagen concurso">
+							<div class="overlay">
+								<h2>Concurso Programame</h2>
+								<div class="iconos-contenedor align-items-center">
+									<a href="https://programame.com/2024/reg/cadiz/" target="_blank" rel="noopener noreferrer">
+										<i class="bi bi-google"></i>
+									</a>
+									<a class="btn btn-link" data-bs-toggle="collapse" href="#concursoDescripcion" role="button" aria-expanded="false" aria-controls="collapseExample">
+										<i class="bi bi-card-text"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="collapse" id="concursoDescripcion">
+							<div class="card card-body">
+								Ganadores del Regional de Andalucía del concurso Programame en el año 2024 con el grupo "GroupNotFoundException". Además participación en el Nacional de 2024 consiguiendo el puesto 11 de 22 equipos participantes.
+							</div>
+						</div>
+					</div>
+			
+			<!-- <a href="#" target="_blank" rel="noopener noreferrer">
+				<button type="button" class="btn btn-info">
+					Ver más proyectos
+					<i class="bi bi-arrow-right-circle-fill"></i>
+				</button>
+			</a> -->
+		</section>
+
+		<!-- Sección de experiencia -->
+		<section id="experiencia" class="experiencia seccion-clara">
+			<div class="container">
+				<h3 class="section-title">Experiencia</h3>
+				<div class="row row-gap-4">
+					<!-- Desarrollo web -->
+					<div class="col-12 col-lg-6">
+						<div class="columna align-items-start">
+							<div class="d-flex trabajo">
+								<h4 class="mb-0 me-1">Desarrollador en Onushop</h4>
+								<span class="badge tipo-contrato">practicas</span>
+							</div>
+							<p>Trabajo como desarrollador fullstack realizando una aplicación de comandas y un visor de servicios. Además también he creado aplicaciones de Windows usando Delphi</p>
+							<div class="badges-contenedor">
+								<span class="badge text-bg-primary">React.js</span>
+								<span class="badge text-bg-primary">Node.js</span>
+								<span class="badge text-bg-primary">Delphi</span>
+								<span class="badge text-bg-primary">PostgreSQL</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		 <!-- Pie de página -->
+		 <footer class="seccion-oscura row align-items-center justify-content-center">
+			<div class="col-12 col-lg-6 iconos-redes-sociales d-flex flex-wrap align-items-center">
+				<!-- <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
+					<i class="bi bi-twitter-x"></i>
+				</a>
+				<a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+					<i class="bi bi-instagram"></i>
+				</a> -->
+				<a href="https://www.linkedin.com/in/sergio-quintero-mena" target="_blank" rel="noopener noreferrer">
+					<i class="bi bi-linkedin"></i>
+				</a>
+				<a href="https://github.com/SergioQuintero00" target="_blank" rel="noopener noreferrer">
+					<i class="bi bi-github"></i>
+				</a>
+				<a href="mailto:sqmena@gmail.com?" rel="noopener noreferrer">
+					<i class="bi bi-envelope"></i>
+				</a>
+			</div>
+			<div class="col-12 col-lg-6 pb-0 pt-0 justify-content-start derechos-de-autor"><p class="m-0">Creado por Sergio Quintero Mena (2025)&#169;</p></div>
+		</footer>
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+	</body>
+</html>
