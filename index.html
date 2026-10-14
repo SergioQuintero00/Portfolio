@@ -22,7 +22,26 @@
       content="Retail software, full-stack web projects and competitive programming. Explore my experience and restaurant ordering application."
     />
     <meta property="og:url" content="https://portfolio-plum-six-30.vercel.app/" />
-    <link rel="icon" type="image/png" href="/imagenes/logo-sergio.png" />
+    <link rel="icon" type="image/png" href="/imagenes/logo-sergio-64.png" />
+    <script id="language-detection">
+      ;(() => {
+        const url = new URL(window.location.href)
+        const requestedLanguage = url.searchParams.get('lang')?.toLowerCase()
+        const browserLanguage = navigator.languages?.[0] || navigator.language || 'en'
+        const language =
+          requestedLanguage === 'en' || requestedLanguage === 'es'
+            ? requestedLanguage
+            : /^es(?:-|$)/i.test(browserLanguage)
+              ? 'es'
+              : 'en'
+
+        if (language === 'es') {
+          url.pathname = '/es/'
+          url.searchParams.delete('lang')
+          window.location.replace(`${url.pathname}${url.search}${url.hash}`)
+        }
+      })()
+    </script>
     <script>
       ;(() => {
         let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'

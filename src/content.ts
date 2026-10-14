@@ -7,8 +7,11 @@ export const sharedProfile = {
   phoneHref: 'tel:+34601058114',
   linkedin: 'https://www.linkedin.com/in/sergio-quintero-mena',
   github: 'https://github.com/SergioQuintero00',
-  logo: '/imagenes/logo-sergio.png',
-  portrait: { src: '/imagenes/retrato-sergio.png' },
+  logo: '/imagenes/logo-sergio-144.webp',
+  portrait: {
+    src: '/imagenes/retrato-sergio-192.webp',
+    srcSet: '/imagenes/retrato-sergio-192.webp 192w, /imagenes/retrato-sergio-288.webp 288w',
+  },
 }
 
 export const project = {
@@ -346,3 +349,5 @@ const es: typeof en = {
 }
 
 export const localizedContent = { en, es }
+
+export type PortfolioContent = typeof en

@@ -1,102 +1,148 @@
-# Sergio Quintero Mena - Portfolio
+# Sergio Quintero Mena — Portfolio
 
-Full-stack web developer portfolio built with React, TypeScript and Tailwind
-CSS on Vite. English is the default language, with a complete Spanish version.
-Includes light and dark themes, professional experience, the restaurant ordering
-and kitchen project, competitive programming, education, contact details and CVs.
+[Visit the portfolio](https://portfolio-plum-six-30.vercel.app/) ·
+[English](https://portfolio-plum-six-30.vercel.app/?lang=en) ·
+[Español](https://portfolio-plum-six-30.vercel.app/es/)
 
-Version 3.1.0 · 7 October 2026. Baseline before the next design and copy revisions.
+A bilingual portfolio built with **React, TypeScript, Tailwind CSS and Vite**.
+It presents my retail software experience, restaurant ordering and kitchen
+project, competitive programming background and contact details.
 
-## Development
+![English portfolio in light mode](docs/preview.png)
 
-Use Node.js 22.12 or a newer version compatible with Vite 8, plus npm.
-Exact dependency versions are recorded in `package-lock.json`.
+The screenshot is generated from the local production build. The live site may
+lag behind unreleased changes in this repository.
+
+## Run locally
+
+Use **Node.js 24** (see `.nvmrc`) and npm. Dependencies are locked in
+`package-lock.json`; the application requires Node.js 22.12 or later.
 
 ```sh
 npm ci
 npm run dev
 ```
 
-Development: `http://127.0.0.1:5173/` (English) and
-`http://127.0.0.1:5173/es/` (Spanish).
+Open `http://127.0.0.1:5173/`. Use `/?lang=en` for explicit English or `/es/`
+for Spanish. To inspect the production output:
 
 ```sh
 npm run build
 npm run preview
-npm run typecheck
 ```
 
-`build` checks TypeScript and creates both pages in `dist/`. `preview` serves
-the production build at `http://127.0.0.1:4173/` by default.
+The preview runs at `http://127.0.0.1:4173/`. No environment variables, database
+or external API credentials are required.
 
-## Languages and content
+## Structure
 
-| File                                               | Purpose                                                        |
-| -------------------------------------------------- | -------------------------------------------------------------- |
-| `src/content.ts`                                   | Shared contact/project assets and typed English/Spanish copy.  |
-| `src/App.tsx`                                      | Sections, interactions, theme control and language navigation. |
-| `src/styles.css`                                   | Tailwind, themes, responsive layout and print styles.          |
-| `index.html`                                       | English entry, metadata and no-JavaScript fallback.            |
-| `es/index.html`                                    | Spanish entry, metadata and no-JavaScript fallback.            |
-| `public/documentos/Sergio_Quintero_Mena_CV_EN.pdf` | Current English CV.                                            |
-| `public/documentos/Sergio_Quintero_Mena_CV.pdf`    | Current Spanish CV.                                            |
+```text
+src/
+  main.tsx              # Entry point: resolve the page locale and mount React
+  App.tsx               # Compose the page
+  content.ts            # Typed English/Spanish copy and shared profile data
+  components/           # Header, language/theme controls and shared presentation
+  sections/             # Project, Experience, About and Contact
+  hooks/                # Active section tracking with IntersectionObserver
+  styles.css            # Tailwind, theme tokens, responsive and print styles
+tests/                  # Browser tests against the production build
+scripts/                # Reproducible image optimization and README screenshot
+public/                 # Served images, CVs, sitemap and contact redirect
+imagenes/               # Retained original assets from the previous site
+index.html              # English metadata, language detection and fallback
+es/index.html           # Spanish metadata and fallback
+.github/workflows/      # Automated checks on pushes and pull requests
+```
 
-The root URL always opens in English. The language switch uses real links to
-`/` and `/es/`, so the selected language survives a reload and can be shared.
-The HTML `lang` attribute selects the matching content. No browser-language
-redirect, translation service or additional routing dependency is needed.
-Both copies must match the typed content structure. Update both when editing.
+## Design decisions
 
-CV downloads follow the current page language. The project video and original
-application screenshot remain in Spanish; the English case study identifies this.
+- **Small, explicit components.** `App` composes the page; sections receive typed
+  content as props. Theme and clipboard state stay with the controls that use
+  them. There is no global state library or client-side router for this single page.
+- **Two language entries.** Each has its own `lang`, title, description,
+  canonical URL, language alternatives and no-JavaScript contact/CV fallback.
+  `src/content.ts` ensures both translations have the same structure.
+- **Browser preference with a manual override.** `/` uses the primary browser
+  language: `es` and `es-*` redirect to `/es/`; everything else stays in English.
+  `/?lang=en` and `/es/` take precedence. The choice lives in the URL, so a new
+  visit to `/` detects again. Redirects preserve other query parameters and hashes.
+- **Light and dark themes.** The initial theme follows the system or a saved
+  choice. A short script applies it before React renders. The toggle also works
+  when browser storage is unavailable.
+- **Accessible native controls.** Semantic headings and navigation, a skip link,
+  keyboard focus styles, reduced-motion support, native project details and an
+  announced clipboard result. A failed copy leaves the email link usable.
+- **Local assets.** Fonts are self-hosted. There are no analytics, contact forms
+  or embedded video players; the video opens YouTube only when followed.
 
-Each HTML entry has its own title, description, canonical URL, Open Graph
-metadata and language alternatives. `public/sitemap.xml` includes both pages.
-If the domain changes, update both HTML files, the sitemap and `public/robots.txt`.
-The old `contacto.html` URL redirects to the Spanish contact section.
+## Checks
 
-## Assets and project demo
-
-The original portrait and logo are in `public/imagenes/retrato-sergio.png` and
-`public/imagenes/logo-sergio.png`. The portrait retains its original proportions.
-The logo is also the favicon. Assets are configured in `sharedProfile`.
-
-Set `project.demoUrl` in `src/content.ts` when the ordering app is publicly
-available. Until then, only the existing video link appears. The portfolio does
-not host the application backend or database.
-
-Fonts are served locally. The video opens YouTube only when its link is followed.
-There are no contact forms, analytics or backend services.
-
-## Formatting
+Install the test browser once after `npm ci` (and again after a Playwright update):
 
 ```sh
-npm run format
-npm run format:check
+npx playwright install chromium
+npm run check
 ```
 
-## Validation status
+On Linux, use `npx playwright install --with-deps chromium` if browser system
+dependencies are not installed.
 
-Both language entries compile. Local checks cover rendered copy in both initial
-themes, section anchors, CV and language links, the optional demo, production
-HTML and asset responses, and matching served PDF files. Each CV is one page and
-under 2 MB. Browser interaction and responsive visual review remain pending:
-the browser control service was unavailable during this revision.
+`check` checks formatting, runs strict TypeScript checking, builds both HTML
+entries and runs Playwright against that build. Tests launch their own preview
+server on port **4178**; keep that port free.
+
+| Command                   | Purpose                                              |
+| ------------------------- | ---------------------------------------------------- |
+| `npm run typecheck`       | Check application, test and config types             |
+| `npm run format:check`    | Check source, tests, configuration and documentation |
+| `npm run format`          | Apply formatting                                     |
+| `npm test`                | Build and run browser tests                          |
+| `npm run test:report`     | Open the last test report                            |
+| `npm run images:optimize` | Regenerate web images from preserved originals       |
+| `npm run preview:capture` | Rebuild and refresh the README screenshot            |
+
+Tests cover language detection and overrides, the matching PDF downloads,
+no-JavaScript fallbacks, theme persistence and blocked storage, clipboard success
+and failure, keyboard project details, section navigation and the old contact
+URL. Layout checks exercise both languages and themes on desktop and an emulated
+mobile viewport, check image loading/overflow and attach screenshots to the report.
+
+The suite currently uses **Chromium**. Mobile emulation is not a physical-device
+test, and the checks do not replace a full accessibility or cross-browser audit.
+Clipboard tests mock only that browser API so they never overwrite the user's
+clipboard. Reports, traces and test screenshots are ignored by Git.
+
+[GitHub Actions](.github/workflows/ci.yml) runs the same `npm run check` command
+on Node.js 24 and uploads the Playwright report. The workflow checks the project;
+it does not deploy it.
+
+## Editing content and assets
+
+Edit both languages in `src/content.ts`. Contact details and project assets are
+shared; the current page selects the English or Spanish PDF in
+`public/documentos/`. The project video and original application screenshot
+remain in Spanish, as noted in the English case study.
+
+Set `project.demoUrl` when the ordering application is publicly available.
+Until then, only the existing video link appears. This repository does not
+contain that application's backend or database.
+
+The original portrait and logo remain unchanged in `public/imagenes/`.
+`npm run images:optimize` creates the 192/288 px WebP portrait variants, a 144 px
+WebP logo and a 64 px PNG favicon. The header selects the appropriate portrait
+using `srcset` and `sizes`, without cropping it. Keep the generated assets in the
+repository so the deployment does not need to run image processing.
 
 ## Deployment
 
-`vercel.json` configures Vite, `npm run build` and the `dist` output directory.
-Use this repository as the Vercel project root. Vite generates both the root
-page and `es/index.html`, so a catch-all SPA rewrite is unnecessary.
-If the existing Vercel project retains manual settings from the old static site,
-check the build command and output directory before publishing.
+`vercel.json` selects Vite, `npm run build` and `dist/`. Use this repository as
+the Vercel project root. Both `/` and `/es/` have HTML output, so no catch-all SPA
+rewrite is needed. If the domain changes, update both HTML metadata blocks,
+`public/sitemap.xml`, `public/robots.txt` and the links in this README.
 
-The `v3.1.0` Git tag preserves this baseline before further design and copy
-revisions. Pushing `main` may trigger the connected Vercel deployment; its status
-is separate from the GitHub commit and tag.
+The old `/contacto.html` address redirects to `/es/#contacto`. The unused static
+website is available in [Git history at v3.1.0](https://github.com/SergioQuintero00/Portfolio/tree/v3.1.0/legacy);
+its original images are retained in `imagenes/` for reuse.
 
-## Previous version
-
-The original HTML, CSS and JavaScript files are preserved in `legacy/`. The
-original images remain in `imagenes/`, with Git history intact. Vite copies
-only selected public assets into the build; legacy resources are not published.
+Pushing `main` may trigger the connected Vercel deployment. Deployment status
+must be checked separately from the GitHub commit or CI result.

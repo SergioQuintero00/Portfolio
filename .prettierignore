@@ -1,6 +1,8 @@
 node_modules/
 dist/
-legacy/
 imagenes/
 public/
 package-lock.json
+test-results/
+playwright-report/
+.playwright/
